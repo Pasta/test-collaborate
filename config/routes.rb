@@ -1,0 +1,5 @@
+Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+
+  resources :documents
+end

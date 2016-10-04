@@ -1,0 +1,9 @@
+<textarea id="body" rows="8" cols="40"><%= @document.collaborative_body %></textarea>
+
+<script>
+collaborate = new Collaborate(App.cable, 'DocumentChannel', <%= @document.id %>)
+collaborativeBody = collaborate.addAttribute('body')
+
+new Collaborate.Adapters.TextAreaAdapter(collaborativeBody, '#body')
+
+</script>
